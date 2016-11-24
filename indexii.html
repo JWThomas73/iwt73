@@ -1,1 +1,832 @@
-crest
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>TimelikeDimensions</title>
+
+	<meta charset="utf-8"/>
+	<meta name="titile" content="Timelike Dimensions"/>
+	<meta name="date" content="12 October 2016"/>
+	<meta name="tags" content="Physics, Philosophy, Time, Space"/>
+  <style type="text/css">
+html {
+    /* the line height value of 1.9 is fixed for a line height multiple of 1.4 in the text view */
+    font: normal 75.0%/1.9 serif;
+}
+
+body {
+    font-family: 'Avenir Next', Helvetica, Georgia, serif;
+    word-wrap: break-word;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline;
+    overflow:hidden;
+    background-color: #f2f2f2;
+    color: #3c3c3c;
+}
+
+/**
+ *
+    Wrappers
+ *
+ */
+
+#wrapper {
+    position: fixed;
+    width: 99.9%;
+    height: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    font-size: 1.0em;
+}
+
+#wrapper::-webkit-scrollbar {
+    width: 8px;
+    height: 10px;
+    -webkit-transition: all .45s ease-in;
+    position: relative;
+}
+#wrapper::-webkit-scrollbar-button:start:decrement, #wrapper::-webkit-scrollbar-button:end:increment {
+    height: 0px;
+    display: block;
+    background-color: transparent;
+}
+#wrapper::-webkit-scrollbar-track-piece {
+    background-color:
+    transparent;
+    -webkit-border-radius: 6px;
+}
+#wrapper::-webkit-scrollbar-thumb:vertical {
+    height: 50px;
+    background-color: #c8c8c8;
+    -webkit-border-radius: 6px;
+    -webkit-transition: all .45s ease-in;
+}
+
+#content {
+    width: 425px;
+    margin: 0 auto 0 auto;
+    padding: 30px 0 30px 0;
+}
+
+/**
+ *
+    Headings
+ *
+ */
+
+h1, h2, h3, h4, h5, h6 {
+    text-rendering: optimizeLegibility;
+    line-height: 1;
+    margin: 0.5rem 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    text-rendering: optimizeLegibility;
+    line-height: 1;
+    margin: 0.5rem 0;
+}
+
+h1, 
+h2, 
+h3 { margin-bottom: 1rem; }
+
+h1 { font-size: 2.75rem; }
+h2 { font-size: 2.25rem; }
+h3 { font-size: 1.75rem; }
+h4 { font-size: 1.25rem; }
+h5 { font-size: 1.00rem; }
+h6 { font-size: 0.85rem; }
+
+/**
+ *
+	Paragraphs
+ *
+ */
+
+p {
+	margin: 0 0 1.5em;
+}
+
+/**
+ *
+    Block quotes
+ *
+ */
+
+blockquote {
+    margin: 0 0 1.5em;
+    width: 96%;
+    padding: 0 10px;
+    border-left: 3px solid #ddd;
+    color: #777;
+}
+
+/**
+ *
+	Code Blocks
+ *
+ */
+
+pre code {
+	word-wrap: normal;
+	white-space: pre-wrap;
+    border: none;
+    padding: 0;
+    background-color: transparent;
+    -webkit-border-radius: 0;
+}
+
+pre {
+	white-space: pre-wrap;
+    width: 96%;
+    margin-bottom: 24px;
+    overflow: hidden;
+    padding: 3px 10px;
+    -webkit-border-radius: 3px;
+    background-color: #eee;
+    border: 1px solid #ddd;
+}
+
+code {
+	white-space: nowrap;
+	font-family: monospace;
+    padding: 2px;
+    -webkit-border-radius: 3px;
+    background-color: #eee;
+    border: 1px solid #ddd;
+}
+
+small {
+	font-size: 65%;
+}
+
+/**
+ *
+    Dictionary Definition
+ *
+ */
+
+dt {
+	display: inline;
+    font-weight:bold;
+}
+
+dd {
+	display: block;
+}
+
+/**
+ *
+    Anchors
+ *
+ */
+
+a {
+    color: #308bd8;
+    text-decoration:none;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+/**
+ *
+    Horizontal rules
+ *
+ */
+
+hr {
+    width: 100%;
+    margin: 3em auto;
+    border: 0;
+    color: #eee;
+    background-color: #ccc;
+    height: 1px;
+    -webkit-box-shadow:0px 1px 0px rgba(255, 255, 255, 0.75);
+}
+
+/**
+ *
+    Lists
+ *
+ */
+
+ol, ul {
+    list-style-position: outside;
+    padding-left: 0;
+    margin-left: 1.5em;
+}
+
+ol li, ul li {
+    text-align: -webkit-match-parent;
+}
+
+li p {
+    margin: 0.5em 0 0.5em;
+}
+
+ol ol, ol ul, ul ul, ul ol {
+    padding-left: 1.5em;
+}
+
+/**
+ *
+    Tables
+ *
+ */
+
+table {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 24px;
+    border-bottom: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    border-spacing: 0;
+}
+
+table th {
+    padding: 3px 10px;
+    background-color: #eee;
+    border-top: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+}
+
+table tr {
+}
+
+table td {
+    padding: 3px 10px;
+    border-top: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+}
+
+/**
+ *
+    Images
+ *
+ */
+
+img {
+    border: none;
+    display: block;
+    margin: 1em auto;
+    max-width: 100%;
+}
+
+/**
+ *
+    Marks
+ *
+ */
+
+mark {
+    background: #fefec0;
+    padding:1px 3px;
+}
+
+/**
+ *
+    Footnotes
+ *
+ */
+.footnote {
+    font-size: 0.8rem;
+    vertical-align: super;
+}
+.footnotes ol {
+    font-weight: bold;
+}
+.footnotes ol li {
+    text-align: -webkit-match-parent;
+}
+
+.footnotes ol li p {
+    font-weight: normal;
+}
+
+/**
+ *
+    Figures and Captions
+ *
+ */
+caption {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+figure {
+    display: block;
+    text-align: center;
+}
+
+figcaption {
+    font-size: 0.8rem;
+    font-style: italic;
+}
+
+/**
+ *
+    Custom classes
+ *
+ */
+
+.shadow {
+    -webkit-box-shadow: 0 2px 4px #999;
+}
+
+.source {
+    text-align: center;
+    font-size: 0.8em;
+    color: #777;
+    margin: -40px auto;
+}
+#wrapper {
+    width: 99.9%;
+}
+#content {
+    width: 425px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Mobile support */
+@media only screen and (max-device-width:1024px) {
+    html {
+        overflow: auto;
+    }
+
+    #wrapper {
+        overflow: auto;
+        position: relative;
+    }
+}/* html elements */
+
+body {
+    background-color: #1a1a1a;
+    color: #bebebe;
+}
+a {
+    color: #308bd8;
+}
+hr {
+    color: #666;
+    background-color: #666;
+    -webkit-box-shadow: none;
+}
+pre {
+    background-color: #222;
+    border-color: #3c3c3c;
+}
+code {
+    background-color: #222;
+    border-color: #3c3c3c;
+}
+blockquote {
+    border-color: #333;
+    color: #999;
+}
+table {
+    border-color: #3c3c3c;
+}
+table th {
+    background-color: #222;
+    border-color: #3c3c3c;
+}
+table td {
+    border-color: #3c3c3c;
+}
+mark {
+    background: #bc990b;
+    color:#000;
+}
+
+/* unique elements */
+
+#wrapper::-webkit-scrollbar-thumb:vertical {
+    background-color: #525252;
+}
+#top-fader {
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(26,26,26,1)), to(rgba(26,26,26,0)));
+}
+#bottom-fader {
+    background: -webkit-gradient(linear, left bottom, left top, from(rgba(26,26,26,1)), to(rgba(26,26,26,0)));
+}
+
+/* custom formatting classes */
+
+.shadow {
+    -webkit-box-shadow: 0 2px 4px #000;
+}@media print {
+/* Printing support.
+ * Override all printing colors to match the Light theme.
+ */
+img, pre, blockquote, table, figure {
+    page-break-inside: avoid;
+}
+body {
+    background-color:#fff;
+}
+#wrapper {
+    position: static;
+    overflow: hidden;
+    color: #000;
+    width: 100%;
+    margin: 0 auto;
+}
+.footnotes {
+    page-break-before: always;
+}
+#content {
+    margin: 0 auto;
+    padding: 0;
+    width: 98%;
+}
+#top-fader, #bottom-fader {
+    display: none;
+}
+hr {
+    color:#ddd;
+    background-color:#ddd;
+    -webkit-box-shadow:0px 1px 0px #ddd;
+}
+pre {
+    background-color:transparent;
+    border: 1px solid #ddd;
+}
+code {
+    background-color:transparent;
+    border: 1px solid #ddd;
+}
+blockquote {
+    border-left: 3px solid #ddd;
+    color: #000;
+}
+ol {
+    /*
+     * Override the list style when printing to ensure list
+     * markers won't get cut.
+     */
+    list-style-position: inside;
+    padding-left: 0;
+    margin-left: 0;
+}
+table {
+    border-bottom: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+}
+table th {
+    background-color:transparent;
+    border-top: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+}
+table td {
+    border-top: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+}
+mark {
+    background:transparent;
+    color: #000;
+}
+.source {
+    color: #000;
+}
+}
+  </style>
+</head>
+<body>
+  <div id="wrapper">
+    <div id="content">
+<h1>Timelike dimensions</h1>
+
+<hr />
+
+<p>(d<em>s</em><sub>k,n</sub>)<sup>2</sup> = (cdt<sub>1</sub>)<sup>2</sup> + &#8230; + (cdt<sub>k</sub>)<sup>2</sup> − (dx<sub>k</sub>+1)<sup>2</sup> − &#8230; − (dx<sub>k</sub>+n)<sup>2</sup></p>
+
+<hr />
+
+<p>From <a href="https://en.wikipedia.org/wiki/Multiple_time_dimensions">https://en.wikipedia.org/wiki/Multiple_time_dimensions</a>:</p>
+
+<h1>Multiple time dimensions</h1>
+
+<p>From Wikipedia, the free encyclopedia</p>
+
+<p>Jump to: navigation, search</p>
+
+<p>The possibility that there might be <strong>more than one dimension of time</strong> has occasionally been discussed in <a href="/wiki/Physics">physics</a> and <a href="/wiki/Philosophy">philosophy</a>.</p>
+
+<h2>Contents</h2>
+
+<ul>
+<li>1 Physics</li>
+<li>2 Philosophy</li>
+<li>3 In <a href="https://jwthomas73.github.io/iwt73/">fiction</a></li>
+<li>4 See also</li>
+<li>5 References</li>
+<li>6 External links</li>
+</ul>
+
+<h2>Physics[<a href="/w/index.php?title=Multiple_time_dimensions&amp;action=edit&amp;section=1">edit</a>]</h2>
+
+<p><a href="/wiki/Special_relativity">Special relativity</a> describes <a href="/wiki/Spacetime">spacetime</a> as a <a href="/wiki/Pseudo-Riemannian_manifold">manifold</a> whose <a href="/wiki/Metric_tensor">metric tensor</a> has a negative <a href="/wiki/Eigenvalue">eigenvalue</a>. This corresponds to the existence of a &#8220;time-like&#8221; direction. A metric with multiple negative eigenvalues would correspondingly imply <em>several</em> timelike directions, i.e. multiple time dimensions, but there is no consensus regarding the relationship of these extra &#8220;times&#8221; to time as conventionally understood.</p>
+
+<p>If thе special theory of relativity can be generalized for the case of <em>k</em>-dimensional time (_t_1, _t_2, &#8230;, _t__k_) and <em>n</em>-dimensional space (_x__k_+1, _x__k_+2, &#8230;, _x_k<em>+n</em>), then the (_k_+_n_)-dimensional interval, being invariant, is given by the expression</p>
+
+<pre><code>(d_s__k_,_n_)2 = (_c_d_t_1)2 + ... + (_c_d_t__k_)2 − (d_x__k_+1)2 − … − (d_x__k_+_n_)2.
+</code></pre>
+
+<p>The <a href="/wiki/Metric_signature">metric signature</a> will be</p>
+
+<pre><code> ( + , ⋯ , + ⏟ k , − , ⋯ , − ⏟ n ) {\displaystyle (\underbrace {+,\cdots ,+} _{k},\underbrace {-,\cdots ,-} _{n})} ![(\underbrace {+,\cdots ,+}_{{k}},\underbrace {-,\cdots ,-}_{{n}})](https://wikimedia.org/api/rest_v1/media/math/render/svg/9c07f37fbb523b1d119e25b44261abd93a58b212) (timelike [sign convention](/wiki/Sign_convention))
+</code></pre>
+
+<p>or</p>
+
+<pre><code> ( − , ⋯ , − ⏟ k , + , ⋯ , + ⏟ n ) {\displaystyle (\underbrace {-,\cdots ,-} _{k},\underbrace {+,\cdots ,+} _{n})} ![(\underbrace {-,\cdots ,-}_{{k}},\underbrace {+,\cdots ,+}_{{n}})](https://wikimedia.org/api/rest_v1/media/math/render/svg/ad0839f72b0d2189c55fb1d296db114023093569) (spacelike sign convention).
+</code></pre>
+
+<p>The transformations between the two inertial frames of reference <em>K</em> and _K_′, which are in a standard configuration (i.e., transformations without translations and/or rotations of the space axis in the <a href="/wiki/Hyperplane">hyperplane</a> of <a href="/wiki/Space">space</a> and/or rotations of the time axis in the hyperplane of time), are given as follows:[1]</p>
+
+<pre><code> t σ ′ = ∑ θ = 1 k ( δ σ θ t θ + c 2 v σ v θ β 2 ( ζ − 1 ) t θ ) − 1 v σ β 2 ζ x k + 1 , {\displaystyle t'_{\sigma }=\sum _{\theta =1}^{k}\left(\delta _{\sigma \theta }t_{\theta }+{\frac {c^{2}}{v_{\sigma }v_{\theta }}}\beta ^{2}(\zeta -1)t_{\theta }\right)-{\frac {1}{v_{\sigma }}}\beta ^{2}\zeta x_{k+1},} ![t'_{{\sigma }}=\sum _{{\theta =1}}^{k}\left(\delta _{{\sigma \theta }}t_{\theta }+{\frac  {c^{2}}{v_{\sigma }v_{{\theta }}}}\beta ^{2}(\zeta -1)t_{\theta }\right)-{\frac  {1}{v_{\sigma }}}\beta ^{2}\zeta x_{{k+1}},](https://wikimedia.org/api/rest_v1/media/math/render/svg/fbd5e3bcb08e5926969ed2a23ea588e2e10a84ae)
+ x k + 1 ′ = − c 2 β 2 ζ ∑ θ = 1 k t θ v θ + ζ x k + 1 , {\displaystyle x'_{k+1}=-c^{2}\beta ^{2}\zeta \sum _{\theta =1}^{k}{\frac {t_{\theta }}{v_{\theta }}}+\zeta x_{k+1},} ![x'_{{k+1}}=-c^{2}\beta ^{2}\zeta \sum _{{\theta =1}}^{k}{\frac  {t_{\theta }}{v_{\theta }}}+\zeta x_{{k+1}},](https://wikimedia.org/api/rest_v1/media/math/render/svg/2f3d285c7da9ccfd3de6d855d413b06fd8ae13f6)
+ x λ ′ = x λ , {\displaystyle x'_{\lambda }=x_{\lambda },} ![x'_{\lambda }=x_{\lambda },](https://wikimedia.org/api/rest_v1/media/math/render/svg/41134cdfb7cc173840f43e2687e0d0c82459ee22)
+</code></pre>
+
+<p>where v 1 = ( v 1 , 0 , ⋯ , 0 ⏟ n − 1 ) , {\displaystyle \mathbf {v} _{1}=(v_{1},\underbrace {0,\cdots ,0} _{n&#8211;1}),} <img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/a6e60ba0c988507285f9fda519f838e0604f2a97" alt="{\mathbf {v}}_{1}=(v_{1},\underbrace {0,\cdots ,0}_{{n-1}})," /> v 2 = ( v 2 , 0 , ⋯ , 0 ⏟ n − 1 ) , {\displaystyle \mathbf {v} _{2}=(v_{2},\underbrace {0,\cdots ,0} _{n&#8211;1}),} <img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/d342b968bbe7324b3c2272b0f73e77bc33d9ae75" alt="{\mathbf {v}}_{2}=(v_{2},\underbrace {0,\cdots ,0}_{{n-1}})," /> v k = ( v k , 0 , ⋯ , 0 ⏟ n − 1 ) {\displaystyle \mathbf {v} _{k}=(v_{k},\underbrace {0,\cdots ,0} _{n&#8211;1})} <img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/373b4a57b59b728203a6faf2c34e95eab988634e" alt="{\mathbf {v}}_{k}=(v_{k},\underbrace {0,\cdots ,0}_{{n-1}})" /> are the vectors of the velocities of _K_′ against <em>K</em>, defined accordingly in relation to the time dimensions _t_1, _t_2, &#8230;, _t_k; β = 1 ∑ μ = 1 k c 2 v μ 2 ; {\displaystyle \beta ={\frac {1}{\sqrt {\sum _{\mu =1}<sup>{k}{</sup>\frac {c<sup>{2}}{v</sup>_{\mu }<sup>{2}}}}}}</sup>;} <img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/bdac935436dcfe4f2c758bc2405a5be863d2c601" alt="\beta ={\frac {1}{{\sqrt {\sum _{{\mu =1}}{k}{\frac {c{2}}{v_{\mu }{2}}}}}}};" /> ζ = 1 1 − β 2 ; {\displaystyle \zeta ={\frac {1}{\sqrt {1-\beta ^{2}}}};} <img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/96095f58d2b5da908410bfa50cb5e5f668b5ff69" alt=" \zeta = \frac{1}{\sqrt{1-\beta2}};" /> <em>σ</em> = 1, 2, &#8230;, <em>k</em>; <em>λ</em> = _k_+2, _k_+3, &#8230;, _k_+_n_. Here _δ__σθ_ is the <a href="/wiki/Kronecker_delta">Kronecker delta</a>. These transformations are generalization of the <a href="/wiki/Lorentz_boost">Lorentz boost</a> in a fixed space direction (_x__k_+1) in the field of the multidimensional <a href="/wiki/Time">time</a> and multidimensional space.</p>
+
+<p><a href="/wiki/File:Causal_structure_of_a_space-time_with_two_time_dimensions_and_one_space_dimension.png"><img src="//upload.wikimedia.org/wikipedia/commons/thumb/4/40/Causal_structure_of_a_space-time_with_two_time_dimensions_and_one_space_dimension.png/220px-Causal_structure_of_a_space-time_with_two_time_dimensions_and_one_space_dimension.png" alt="" /></a></p>
+
+<p><a href="/wiki/File:Causal_structure_of_a_space-time_with_two_time_dimensions_and_one_space_dimension.png"></a></p>
+
+<p>Causal structure of a space-time with two time dimensions and one space dimension</p>
+
+<p>Let us denote d x η d t σ = V σ η {\displaystyle {\frac {dx_{\eta }}{dt_{\sigma }}}=V_{\sigma \eta }} <img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/160d31b2bc709efeee64c50216e42176a5ccb2db" alt="{\frac {dx_{\eta }}{dt_{\sigma }}}=V_{{\sigma \eta }}" /> and d x η ′ d t σ ′ = V σ η ′ , {\displaystyle {\frac {dx&#8216;_{\eta }}{dt&#8217;_{\sigma }}}=V&#8217;_{\sigma \eta },} <img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/647532fd0744b40982652e1826b06802aa8394b2" alt="{\frac {dx_{\eta }}{dt_{\sigma }}}=V'_{{\sigma \eta }}," /> where <em>σ</em> = 1, 2, &#8230;, <em>k</em>; <em>η</em> = _k_+1, _k_+2, &#8230;, _k_+_n_. The <a href="/wiki/Velocity-addition_formula">velocity-addition formula</a> is then given by</p>
+
+<pre><code> V σ ( k + 1 ) ′ = V σ ( k + 1 ) ζ ( 1 − β 2 ∑ θ = 1 k c 2 v θ V θ ( k + 1 ) ) 1 + V σ ( k + 1 ) v σ β 2 ( ( ζ − 1 ) ∑ θ = 1 k c 2 v θ V θ ( k + 1 ) − ζ ) , {\displaystyle V'_{\sigma (k+1)}={\frac {V_{\sigma (k+1)}\zeta \left(1-\beta ^{2}\sum _{\theta =1}^{k}{\frac {c^{2}}{v_{\theta }V_{\theta (k+1)}}}\right)}{1+{\frac {V_{\sigma (k+1)}}{v_{\sigma }}}\beta ^{2}\left((\zeta -1)\sum _{\theta =1}^{k}{\frac {c^{2}}{v_{\theta }V_{\theta (k+1)}}}-\zeta \right)}},} ![V'_{{\sigma (k+1)}}={\frac  {V_{{\sigma (k+1)}}\zeta \left(1-\beta ^{2}\sum _{{\theta =1}}^{k}{\frac  {c^{2}}{v_{\theta }V_{{\theta (k+1)}}}}\right)}{1+{\frac  {V_{{\sigma (k+1)}}}{v_{\sigma }}}\beta ^{2}\left((\zeta -1)\sum _{{\theta =1}}^{k}{\frac  {c^{2}}{v_{\theta }V_{{\theta (k+1)}}}}-\zeta \right)}},](https://wikimedia.org/api/rest_v1/media/math/render/svg/d483d84cae49f4f7e57827da9ea99bb6f4439ae0)
+ V σ λ ′ = V σ λ 1 + V σ ( k + 1 ) v σ β 2 ( ( ζ − 1 ) ∑ θ = 1 k c 2 v θ V θ ( k + 1 ) − ζ ) , {\displaystyle V'_{\sigma \lambda }={\frac {V_{\sigma \lambda }}{1+{\frac {V_{\sigma (k+1)}}{v_{\sigma }}}\beta ^{2}\left((\zeta -1)\sum _{\theta =1}^{k}{\frac {c^{2}}{v_{\theta }V_{\theta (k+1)}}}-\zeta \right)}},} ![V'_{{\sigma \lambda }}={\frac  {V_{{\sigma \lambda }}}{1+{\frac  {V_{{\sigma (k+1)}}}{v_{\sigma }}}\beta ^{2}\left((\zeta -1)\sum _{{\theta =1}}^{k}{\frac  {c^{2}}{v_{\theta }V_{{\theta (k+1)}}}}-\zeta \right)}},](https://wikimedia.org/api/rest_v1/media/math/render/svg/8c22fd90d3403f684ca963679e224a27b405119b)
+</code></pre>
+
+<p>where <em>σ</em> = 1, 2, &#8230;, <em>k</em>; <em>λ</em> = _k_+2, _k_+3, &#8230;, _k_+_n_.</p>
+
+<p>For simplicity, let us consider only one spatial <a href="/wiki/Dimension">dimension</a> _x_3 and the two time dimensions _x_1 and _x_2. (E. g., _x_1 = _ct_1, _x_2 = _ct_2, _x_3 = <em>x</em>.) Let us assume that in point <em>O</em>, having coordinates _x_1 = 0, _x_2 = 0, _x_3 = 0, there has been an event <em>E</em>. Let us further assume that a given interval of time Δ T = ( Δ t 1 ) 2 + ( Δ t 2 ) 2 ≥ 0 {\displaystyle \Delta T={\sqrt {(\Delta t_{1})^{2}+(\Delta t_{2})^{2}}}\geq 0} <img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/87b776124f4d6ed67da80417a0f9e3185d63cac6" alt="\Delta T={\sqrt {(\Delta t_{1})^{2}+(\Delta t_{2})^{2}}}\geq 0" /> has passed since the event <em>E</em>. The causal region connected to the event <em>E</em> includes the <a href="/wiki/Lateral_surface">lateral surface</a> of the <a href="/wiki/Right_circular_cone">right circular cone</a> {(_x_1)2 + (_x_2)2 − (_x_3)2 = 0}, the lateral surface of the <a href="/wiki/Right_circular_cylinder">right circular cylinder</a> {(_x_1)2 + (_x_2)2 = _c_2Δ_T_2} and the inner region bounded by these surfaces, i.e., the causal region includes all points (_x_1, _x_2, _x_3), for which the conditions</p>
+
+<pre><code>{(_x_1)2 + (_x_2)2 − (_x_3)2 = 0 and |_x_3| ≤ _c_Δ_T_} or
+{(_x_1)2 + (_x_2)2 = _c_2Δ_T_2 and |_x_3| ≤ _c_Δ_T_} or
+{(_x_1)2 + (_x_2)2 − (_x_3)2 &gt; 0 and (_x_1)2 + (_x_2)2 &lt; _c_2Δ_T_2}
+</code></pre>
+
+<p>are fulfilled.[1] Theories with more than one dimension of time have sometimes been advanced in physics, whether as a serious description of reality or just as a curious possibility. <a href="/wiki/Itzhak_Bars">Itzhak Bars</a>&#8217;s work on &#8220;two-time physics&#8221;,[2] inspired by the SO(10,2) symmetry of the extended supersymmetry structure of <a href="/wiki/M-theory">M-theory</a>, is the most recent and systematic development of the concept (see also <a href="/wiki/F-theory">F-theory</a>). Walter Craig and Steven Weinstein proved the existence of a well-posed initial value problem for the <a href="/wiki/Ultrahyperbolic_equation">ultrahyperbolic equation</a> (a wave equation in more than one time dimension).[3] This showed that initial data on a mixed (spacelike and timelike) hypersurface obeying a particular nonlocal constraint evolves deterministically in the remaining time dimension.</p>
+
+<h2>Philosophy[<a href="/w/index.php?title=Multiple_time_dimensions&amp;action=edit&amp;section=2">edit</a>]</h2>
+
+<p>_<a href="/wiki/An_Experiment_with_Time">An Experiment with Time</a>_ by <a href="/wiki/J._W._Dunne">J. W. Dunne</a> (1927) describes[4] an <a href="/wiki/Ontology">ontology</a> with an infinite hierarchy of conscious minds, each with its own dimension of time and able to view events in lower time dimensions <a href="/wiki/Eternalism_(philosophy_of_time)">from outside</a>.[_<a href="/wiki/Wikipedia:Please_clarify">clarification needed</a>_] His theory was often criticised as exhibiting an unnecessary <a href="/wiki/Infinite_regress">infinite regress</a>.</p>
+
+<p>The conceptual possibility of multiple time dimensions has also been raised in modern <a href="/wiki/Analytic_philosophy">analytic philosophy</a>.[5]</p>
+
+<p><a href="/wiki/John_G._Bennett">John G. Bennett</a>, an English philosopher, <a href="/wiki/Theosophy">theosophist</a>, <a href="/wiki/Anthroposophy">anthroposophist</a>, and follower of the mystic <a href="/wiki/George_Gurdjieff">George Gurdjieff</a>, posited a six-dimensional Universe with the usual three spatial dimensions and three time-like dimensions that he called time, <a href="/wiki/Eternity">eternity</a> and hyparxis. Time is the sequential chronological time that we are familiar with. The hypertime dimensions called eternity and hyparxis are said to have distinctive properties of their own. Eternity could be considered cosmological time or timeless time. Hyparxis is supposed (by Bennett) to be characterised as an ableness-to-be and may be more noticeable in the realm of quantum processes. According to Bennett, the conjunction of the two dimensions of time and eternity could form a hypothetical basis for a Multiverse cosmology with parallel universes existing across a plane of vast possibilities, while the third time-like dimension hyparxis could allow the theoretical existence of sci-fi possibilities such as time travel, sliding between parallel worlds and faster-than-light travel.</p>
+
+<p>No well-known physicist or cosmologist has endorsed these ideas. While Bennett has put forward some curious speculation, the question of measurement (how one would measure these hypothetical extra time-like dimensions) is left unaddressed, as is how one might <a href="/wiki/Falsifiability">falsify</a> his suggestions (which is generally regarded [6] as the distinguishing feature of science since the work of <a href="/wiki/Karl_Popper">Karl Popper</a>).</p>
+
+<h2>In fiction[<a href="/w/index.php?title=Multiple_time_dimensions&amp;action=edit&amp;section=3">edit</a>]</h2>
+
+<ul>
+<li>In the final novel of the trilogy _<a href="/wiki/Humans_as_Gods">Humans as Gods</a>_ «The Reverse Time Loop» (1977), _<a href="/wiki/Sergey_Snegov">Sergey Snegov</a>_ puts into the mouth of the protagonist words: «This is my idea – to break out of the one-dimensional, straight time during a two-dimensional time»[7]</li>
+<li>_<a href="/wiki/The_Number_of_the_Beast_(novel)">The Number of the Beast</a>_ by <a href="/wiki/Robert_A._Heinlein">Robert A. Heinlein</a> (1980) features a six-dimensional <a href="/wiki/Cosmology">cosmology</a> in which there are three time dimensions, denoted <em>t</em>, <em>tau</em> (<a href="/wiki/Greek_alphabet">Greek</a> <a href="/wiki/Tau">τ</a>) and <em>teh</em> (<a href="/wiki/Cyrillic_script">Cyrillic</a> <a href="/wiki/Te_(Cyrillic)">cursive <em>т</em></a>).</li>
+<li>The <a href="/wiki/Ware_Tetralogy">Ware Tetralogy</a> by <a href="/wiki/Rudy_Rucker">Rudy Rucker</a> features <a href="/wiki/Extraterrestrial_life_in_popular_culture">aliens</a> called Metamartians who &#8220;are from a part of the cosmos where time is two-dimensional&#8221;.[8]</li>
+<li>In <a href="/wiki/Diane_Duane">Diane Duane</a>&#8217;s _<a href="/wiki/Star_Trek">Star Trek</a>_ novel, _<a href="/wiki/The_Wounded_Sky">The Wounded Sky</a>_, the Hamalki physicist K&#8217;t&#8217;lk states that time has three dimensions, called &#8220;inception&#8221;, &#8220;duration&#8221;, and &#8220;termination&#8221;.</li>
+<li>The comic series <a href="/wiki/Sonic_the_Hedgehog_(comics)">Sonic The Hedgehog</a> uses this theory to its advantage when Sonic meets his evil twin Scourge.</li>
+</ul>
+
+<h2>See also[<a href="/w/index.php?title=Multiple_time_dimensions&amp;action=edit&amp;section=4">edit</a>]</h2>
+
+<ul>
+<li><a href="/wiki/Anthropic_principle#Spacetime">Privileged character of 3+1 spacetime</a></li>
+</ul>
+
+<h2>References[<a href="/w/index.php?title=Multiple_time_dimensions&amp;action=edit&amp;section=5">edit</a>]</h2>
+
+<ol>
+<li>^ <em><strong>a</strong></em> <em><strong>b</strong></em> Velev, Milen (2012). &#8220;Relativistic mechanics in multiple time dimensions&#8221;. <em>Physics Essays</em>. <strong>25</strong> (3): 403–438. <a href="/wiki/Bibcode">Bibcode</a>:<a href="http://adsabs.harvard.edu/abs/2012PhyEs..25..403V">2012PhyEs..25..403V</a>. <a href="/wiki/Digital_object_identifier">doi</a>:<a href="//dx.doi.org/10.4006%2F0836-1398-25.3.403">10.4006/0836&#8211;1398&#8211;25.3.403</a>. </li>
+<li><strong>^</strong> Bars, Itzhak. <a href="http://physics.usc.edu/~bars/twoTph.htm">&#8220;Two-Time Physics&#8221;</a>. Retrieved 8 December 2012. </li>
+<li><strong>^</strong> Craig, Walter; Weinstein, Steven. <a href="http://rspa.royalsocietypublishing.org/content/465/2110/3023">&#8220;On determinism and well-posedness in multiple time dimensions&#8221;</a>. Proc. R. Soc. A vol. 465 no. 2110 3023&#8211;3046 (2008). Retrieved 5 December 2013. </li>
+<li><strong>^</strong> McDonald, John Q. (15 November 2006). <a href="http://sprg.ssl.berkeley.edu/~jmcd/book/revs3/aewt.html">&#8220;John&#8217;s Book Reviews: An Experiment with Time&#8221;</a>. Retrieved 8 December 2012. </li>
+<li><strong>^</strong> Weinstein, Steven. <a href="http://www.fqxi.org/community/essay/winners/2008.1#Weinstein">&#8220;Many Times&#8221;</a>. Foundational Questions Institute. Retrieved 5 December 2013. </li>
+<li><strong>^</strong> <a href="http://plato.stanford.edu/entries/popper/">Stanford Encyclopedia of Philosophy Entry on Karl Popper</a></li>
+<li><strong>^</strong> <a href="http://www.fantlab.ru/edition4993">Сергей Снегов Кольцо обратного времени / Сост. и авт. вступ. ст. Е. Брандис, В. Дмитревский. — Л.: Лениздат, 1977. — С. 11&#8211;270. — 639 с. — 100 000 экз.</a></li>
+<li><strong>^</strong> Rucker, Rudy (25 November 2005). <a href="http://www.rudyrucker.com/pdf/realwarenotes.pdf">&#8220;Notes for Realware&#8221;</a> (PDF). Retrieved 8 December 2012. </li>
+</ol>
+
+<h2>External links[<a href="/w/index.php?title=Multiple_time_dimensions&amp;action=edit&amp;section=6">edit</a>]</h2>
+
+<ul>
+<li><p>Itzhak Bars, <a href="http://arxiv.org/abs/arXiv:1004.0688">Gauge Symmetry in Phase Space, Consequences for Physics and Spacetime</a>, Int. J. Mod. Phys. A <strong>25</strong> (2010) 5235&#8211;5252, arXiv:1004.0688 [hep-th].</p></li>
+<li><p>Itzhak Bars, John Terning, <a href="http://www.springer.com/astronomy/book/978-0-387-77637-8">Extra dimensions in space and time</a>, New York, Springer, Multiversal journeys series, 2010, <a href="/wiki/Special:BookSources/9780387776378">ISBN 978&#8211;0&#8211;38777637&#8211;8</a>. DOI 10.1007/978&#8211;0&#8211;387&#8211;77638&#8211;5.</p></li>
+<li><p><a href="/wiki/Template:Time_in_philosophy">v</a></p></li>
+<li><p><a href="/wiki/Template_talk:Time_in_philosophy">t</a></p></li>
+<li><p><a href="//en.wikipedia.org/w/index.php?title=Template:Time_in_philosophy&amp;action=edit">e</a></p></li>
+</ul>
+
+<p><a href="/wiki/Philosophy_of_space_and_time">Philosophy of time</a></p>
+
+<p>Concepts<br/>
+in time</p>
+
+<ul>
+<li><a href="/wiki/Time">Time</a></li>
+<li><a href="/wiki/Duration_(philosophy)">Duration</a></li>
+<li><a href="/wiki/A_priori_and_a_posteriori">A priori and a posteriori</a></li>
+<li><a href="/wiki/Eternity">Eternity</a></li>
+<li><a href="/wiki/Event_(philosophy)">Event</a></li>
+<li><a href="/wiki/Action_(philosophy)">Action</a></li>
+<li><a href="/wiki/Deterministic_system_(philosophy)">Deterministic system</a></li>
+<li><a href="/wiki/Free_will">Free will</a></li>
+<li><a href="/wiki/Eternal_return">Eternal return</a></li>
+<li><a href="/wiki/A-series_and_B-series">A-series and B-series</a></li>
+<li><a href="/wiki/Temporal_parts">Temporal parts</a></li>
+<li><a href="/wiki/Growing_block_universe">Growing block universe</a></li>
+<li><strong>Multiple time dimensions</strong></li>
+</ul>
+
+<p><a href="/wiki/File:MontreGousset001.jpg"><img src="//upload.wikimedia.org/wikipedia/commons/thumb/4/45/MontreGousset001.jpg/76px-MontreGousset001.jpg" alt="MontreGousset001.jpg" /></a><br/>
+<a href="/wiki/File:Portal-puzzle.svg"><img src="//upload.wikimedia.org/wikipedia/en/thumb/f/fd/Portal-puzzle.svg/16px-Portal-puzzle.svg.png" alt="Portal:Time" /></a><a href="/wiki/Portal:Time">Time Portal</a></p>
+
+<p>Theories<br/>
+of time</p>
+
+<ul>
+<li><a href="/wiki/Determinism">Determinism</a></li>
+<li><a href="/wiki/Temporal_finitism">Temporal finitism</a></li>
+<li><a href="/wiki/Fatalism">Fatalism</a></li>
+<li><a href="/wiki/Indeterminism">Indeterminism</a></li>
+<li><a href="/wiki/Compatibilism_and_incompatibilism">Compatibilism and incompatibilism</a></li>
+<li><a href="/wiki/Presentism_(philosophy_of_time)">Presentism</a></li>
+<li><a href="/wiki/Eternalism_(philosophy_of_time)">Eternalism</a></li>
+<li><a href="/wiki/Four_dimensionalism">Four dimensionalism</a></li>
+<li><a href="/wiki/Endurantism">Endurantism</a></li>
+<li><a href="/wiki/Perdurantism">Perdurantism</a></li>
+<li><a href="/wiki/B-Theory_of_time">B-Theory of time</a></li>
+</ul>
+
+<p>Related<br/>
+articles</p>
+
+<ul>
+<li><a href="/wiki/Metaphysics">Metaphysics</a></li>
+<li><a href="/wiki/Etiology">Etiology</a></li>
+<li><a href="/wiki/Teleology">Teleology</a></li>
+<li><a href="/wiki/Post_hoc_ergo_propter_hoc">Post hoc ergo propter hoc</a></li>
+<li>_<a href="/wiki/The_Unreality_of_Time">The Unreality of Time</a>_</li>
+<li>_<a href="/wiki/The_Singular_Universe_and_the_Reality_of_Time">The Singular Universe and the Reality of Time</a>_</li>
+</ul>
+
+<figure>
+<img src="//en.wikipedia.org/wiki/Special:CentralAutoLogin/start?type=1x1" alt="" />
+</figure>
+
+<p>Retrieved from &#8220;<a href="https://en.wikipedia.org/w/index.php?title=Multiple_time_dimensions&amp;oldid=720990466">https://en.wikipedia.org/w/index.php?title=Multiple_time_dimensions&amp;oldid=720990466</a>&#8221; </p>
+
+<p><a href="/wiki/Help:Category">Categories</a>: </p>
+
+<ul>
+<li><a href="/wiki/Category:Time">Time</a></li>
+<li><a href="/wiki/Category:Spacetime">Spacetime</a></li>
+<li><a href="/wiki/Category:Philosophy_of_time">Philosophy of time</a></li>
+</ul>
+
+<p>Hidden categories: </p>
+
+<ul>
+<li><a href="/wiki/Category:Wikipedia_articles_needing_clarification_from_April_2015">Wikipedia articles needing clarification from April 2015</a></li>
+</ul>
+
+<h2>Navigation menu</h2>
+
+<h3>Personal tools</h3>
+
+<ul>
+<li>Not logged in</li>
+<li><a href="/wiki/Special:MyTalk">Talk</a></li>
+<li><a href="/wiki/Special:MyContributions">Contributions</a></li>
+<li><a href="/w/index.php?title=Special:CreateAccount&amp;returnto=Multiple+time+dimensions">Create account</a></li>
+<li><a href="/w/index.php?title=Special:UserLogin&amp;returnto=Multiple+time+dimensions">Log in</a></li>
+</ul>
+
+<h3>Namespaces</h3>
+
+<ul>
+<li><a href="/wiki/Multiple_time_dimensions">Article</a></li>
+<li><a href="/wiki/Talk:Multiple_time_dimensions">Talk</a></li>
+</ul>
+
+<h3>Variants</h3>
+
+<h3>Views</h3>
+
+<ul>
+<li><a href="/wiki/Multiple_time_dimensions">Read</a></li>
+<li><a href="/w/index.php?title=Multiple_time_dimensions&amp;action=edit">Edit</a></li>
+<li><a href="/w/index.php?title=Multiple_time_dimensions&amp;action=history">View history</a></li>
+</ul>
+
+<h3>More</h3>
+
+<h3>Search</h3>
+
+<p><a href="/wiki/Main_Page"></a></p>
+
+<h3>Navigation</h3>
+
+<ul>
+<li><a href="/wiki/Main_Page">Main page</a></li>
+<li><a href="/wiki/Portal:Contents">Contents</a></li>
+<li><a href="/wiki/Portal:Featured_content">Featured content</a></li>
+<li><a href="/wiki/Portal:Current_events">Current events</a></li>
+<li><a href="/wiki/Special:Random">Random article</a></li>
+<li><a href="https://donate.wikimedia.org/wiki/Special:FundraiserRedirector?utm_source=donate&amp;utm_medium=sidebar&amp;utm_campaign=C13_en.wikipedia.org&amp;uselang=en">Donate to Wikipedia</a></li>
+<li><a href="//shop.wikimedia.org">Wikipedia store</a></li>
+</ul>
+
+<h3>Interaction</h3>
+
+<ul>
+<li><a href="/wiki/Help:Contents">Help</a></li>
+<li><a href="/wiki/Wikipedia:About">About Wikipedia</a></li>
+<li><a href="/wiki/Wikipedia:Community_portal">Community portal</a></li>
+<li><a href="/wiki/Special:RecentChanges">Recent changes</a></li>
+<li><a href="//en.wikipedia.org/wiki/Wikipedia:Contact_us">Contact page</a></li>
+</ul>
+
+<h3>Tools</h3>
+
+<ul>
+<li><a href="/wiki/Special:WhatLinksHere/Multiple_time_dimensions">What links here</a></li>
+<li><a href="/wiki/Special:RecentChangesLinked/Multiple_time_dimensions">Related changes</a></li>
+<li><a href="/wiki/Wikipedia:File_Upload_Wizard">Upload file</a></li>
+<li><a href="/wiki/Special:SpecialPages">Special pages</a></li>
+<li><a href="/w/index.php?title=Multiple_time_dimensions&amp;oldid=720990466">Permanent link</a></li>
+<li><a href="/w/index.php?title=Multiple_time_dimensions&amp;action=info">Page information</a></li>
+<li><a href="https://www.wikidata.org/wiki/Q4298882">Wikidata item</a></li>
+<li><a href="/w/index.php?title=Special:CiteThisPage&amp;page=Multiple_time_dimensions&amp;id=720990466">Cite this page</a></li>
+</ul>
+
+<h3>Print/export</h3>
+
+<ul>
+<li><a href="/w/index.php?title=Special:Book&amp;bookcmd=book_creator&amp;referer=Multiple+time+dimensions">Create a book</a></li>
+<li><a href="/w/index.php?title=Special:Book&amp;bookcmd=render_article&amp;arttitle=Multiple+time+dimensions&amp;returnto=Multiple+time+dimensions&amp;oldid=720990466&amp;writer=rdf2latex">Download as PDF</a></li>
+<li><a href="/w/index.php?title=Multiple_time_dimensions&amp;printable=yes">Printable version</a></li>
+</ul>
+
+<h3>Languages</h3>
+
+<ul>
+<li><p><a href="https://ca.wikipedia.org/wiki/Dimensions_m%C3%BAltiples_del_temps">Català</a></p></li>
+<li><p><a href="https://es.wikipedia.org/wiki/Dimensiones_de_tiempo_m%C3%BAltiples">Español</a></p></li>
+<li><p><a href="https://fr.wikipedia.org/wiki/Temps_multi-dimensionnel">Français</a></p></li>
+<li><p><a href="https://ko.wikipedia.org/wiki/%EB%8B%A4%EC%8B%9C%EA%B0%84_%EC%B0%A8%EC%9B%90">한국어</a></p></li>
+<li><p><a href="https://it.wikipedia.org/wiki/Dimensioni_temporali_multiple">Italiano</a></p></li>
+<li><p><a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%BD%D0%BE%D0%B3%D0%BE%D0%BC%D0%B5%D1%80%D0%BD%D0%BE%D0%B5_%D0%B2%D1%80%D0%B5%D0%BC%D1%8F">Русский</a></p></li>
+<li><p><a href="https://sl.wikipedia.org/wiki/Mnogo%C4%8Dasovne_razse%C5%BEnosti">Slovenščina</a></p></li>
+<li><p><a href="https://sv.wikipedia.org/wiki/Flerdimensionell_tid">Svenska</a></p></li>
+<li><p><a href="https://zh.wikipedia.org/wiki/%E5%A4%9A%E6%97%B6%E9%97%B4%E7%BB%B4%E5%BA%A6">中文</a></p></li>
+<li><p><a href="https://www.wikidata.org/wiki/Q4298882#sitelinks-wikipedia">Edit links</a></p></li>
+<li><p>This page was last modified on 19 May 2016, at 04:06.</p></li>
+<li><p>Text is available under the <a href="//en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License">Creative Commons Attribution-ShareAlike License</a><a href="//creativecommons.org/licenses/by-sa/3.0/"></a>; additional terms may apply. By using this site, you agree to the <a href="//wikimediafoundation.org/wiki/Terms_of_Use">Terms of Use</a> and <a href="//wikimediafoundation.org/wiki/Privacy_policy">Privacy Policy</a>. Wikipedia® is a registered trademark of the <a href="//www.wikimediafoundation.org/">Wikimedia Foundation, Inc.</a>, a non-profit organization.</p></li>
+<li><p><a href="https://wikimediafoundation.org/wiki/Privacy_policy">Privacy policy</a></p></li>
+<li><p><a href="/wiki/Wikipedia:About">About Wikipedia</a></p></li>
+<li><p><a href="/wiki/Wikipedia:General_disclaimer">Disclaimers</a></p></li>
+<li><p><a href="//en.wikipedia.org/wiki/Wikipedia:Contact_us">Contact Wikipedia</a></p></li>
+<li><p><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/How_to_contribute">Developers</a></p></li>
+<li><p><a href="https://wikimediafoundation.org/wiki/Cookie_statement">Cookie statement</a></p></li>
+<li><p><a href="//en.m.wikipedia.org/w/index.php?title=Multiple_time_dimensions&amp;mobileaction=toggle_view_mobile">Mobile view</a></p></li>
+<li><p><a href="https://wikimediafoundation.org/"><img src="/static/images/wikimedia-button.png" alt="Wikimedia Foundation" /></a></p></li>
+<li><p><a href="//www.mediawiki.org/"><img src="/static/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" /></a>
+ *[e]: Edit this template
+ *[t]: Discuss this template
+ *[v]: View this template</p></li>
+</ul>
+
+<hr />
+
+<h2>Spacetime</h2>
+
+<p>Properties of n+m-dimensional spacetimes</p>
+
+<p>Main article: Spacetime</p>
+
+<p>There are two kinds of dimensions, spatial (bidirectional) and temporal (unidirectional). Let the number of spatial dimensions be N and the number of temporal dimensions be T. That N = 3 and T = 1, setting aside the compactified dimensions invoked by string theory and undetectable to date, can be explained by appealing to the physical consequences of letting N differ from 3 and T differ from 1. The argument is often of an anthropic character and possibly the first of its kind, albeit before the complete concept came into vogue. Immanuel Kant argued that 3-dimensional space was a consequence of the inverse square law of universal gravitation. While Kant&#8217;s argument is historically important, John D. Barrow says that it &#8220;[&#8230;] gets the punch-line back to front: it is the three-dimensionality of space that explains why we see inverse-square force laws in Nature, not vice-versa&#8221; (Barrow 2002: 204). This is because the law of gravitation (or any other inverse-square law) follows from the concept of flux and the proportional relationship of flux density and the strength of field. If N = 3, then 3-dimensional solid objects have surface areas proportional to the square of their size in any selected spatial dimension. In particular, a sphere of radius r has area of 4πr ². More generally, in a space of N dimensions, the strength of the gravitational attraction between two bodies separated by a distance of r would be inversely proportional to rN−1.</p>
+
+<p>In 1920, Paul Ehrenfest showed that if there is only one time dimension and greater than three spatial dimensions, the orbit of a planet about its Sun cannot remain stable. The same is true of a star&#8217;s orbit around the center of its galaxy.[50] Ehrenfest also showed that if there are an even number of spatial dimensions, then the different parts of a wave impulse will travel at different speeds. If there are
+5
++
+2
+k
+5+2k spatial dimensions, where k is a whole number, then wave impulses become distorted. In 1922, Hermann Weyl showed that Maxwell&#8217;s theory of electromagnetism works only with three dimensions of space and one of time.[51] Finally, Tangherlini showed in 1963 that when there are more than three spatial dimensions, electron orbitals around nuclei cannot be stable; electrons would either fall into the nucleus or disperse.[52]</p>
+
+<p>Max Tegmark expands on the preceding argument in the following anthropic manner.[53] If T differs from 1, the behavior of physical systems could not be predicted reliably from knowledge of the relevant partial differential equations. In such a universe, intelligent life capable of manipulating technology could not emerge. Moreover, if T &gt; 1, Tegmark maintains that protons and electrons would be unstable and could decay into particles having greater mass than themselves. (This is not a problem if the particles have a sufficiently low temperature.)</p>
+    </div>
+  </div> <!-- End wrapper -->
+</body>
+</html>
