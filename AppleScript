@@ -1,0 +1,67 @@
+# Set up a Folder Actions notification
+In OS X you can monitor folders using Folder Actions, which link applescripts to folders on the system so if they are changed then the scripts will run. While developing such a script might be difficult for some users, Apple offers a built-in script example that can be used to issue a notice whenever an item is added to a folder:
+
+## Enable the Applescript menu
+Go to the /Applications/Utilities/ folder and open the program called AppleScript Editor. In the preferences settings for this application, check the box to Show Script Menu in menu bar." The resulting menu will be shown next to the battery life, date, and Wi-Fi indicators on the right-hand side of your menu bar.
+
+![<span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img src="https://cnet4.cbsistatic.com/hub/i/r/2012/04/17/d1a4217a-fdc2-11e2-8c7c-d4ae52e62bcc/resize/570xauto/d7eecd47691b49c9163dabf67b3020a6/ShowScriptMenu.png" class="" alt="AppleScript menu option" height="auto" width="570"><meta itemprop="url" content="https://cnet4.cbsistatic.com/hub/i/r/2012/04/17/d1a4217a-fdc2-11e2-8c7c-d4ae52e62bcc/resize/570xauto/d7eecd47691b49c9163dabf67b3020a6/ShowScriptMenu.png"><meta itemprop="height" content="auto"><meta itemprop="width" content="570"></span>](http://i.i.cbsi.com/cnwk.1d/i/tim/2012/04/17/ShowScriptMenu.png)
+
+Checking this box in the AppleScript Editor utility will add the script menu to the menu bar.
+Screenshot by Topher Kessler/CNET
+
+
+
+## Enable Folder actions
+In this menu go to "Folder Actions" where you will see a link to the Folder Actions Setup utility, which can be used to configure your various folder action scripts. You can use either this utility or the "Enable Folder Actions" script in this same menu to enable folder actions on the system.
+
+![<span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img src="https://cnet1.cbsistatic.com/hub/i/r/2012/04/17/d1a6f00c-fdc2-11e2-8c7c-d4ae52e62bcc/resize/570xauto/a66ae86b2eaa3733f7677ef68d47b4cd/FolderActionList.png" class="" alt="Folder action script selector" height="auto" width="570"><meta itemprop="url" content="https://cnet1.cbsistatic.com/hub/i/r/2012/04/17/d1a6f00c-fdc2-11e2-8c7c-d4ae52e62bcc/resize/570xauto/a66ae86b2eaa3733f7677ef68d47b4cd/FolderActionList.png"><meta itemprop="height" content="auto"><meta itemprop="width" content="570"></span>](http://i.i.cbsi.com/cnwk.1d/i/tim/2012/04/17/FolderActionList.png)
+    Folder action script selector
+    Use the "add - new item alert" script as the script to append to the Launch Agents folders.
+
+##Add a new-item folder action
+In the Folder Actions submenu, select the Attach Script to Folder option, followed by choosing the "add - new item alert" option from the list of scripts that appears. Then click Choose and follow this with selecting the folder to which you want to apply the action.
+
+In this case, go to the username/Library/ folder, select the LaunchAgents folder, and click the Open button. In OS X Lion you will not see the Library folder by default, so first go to the Finder's Go menu, press the Option key, and then select Library. Then drag the Library folder to the Finder sidebar, and it should then become available in the sidebar in the Open dialogue.
+
+![<span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img src="https://cnet1.cbsistatic.com/hub/i/r/2012/04/18/d1a8e547-fdc2-11e2-8c7c-d4ae52e62bcc/resize/570xauto/4af0c2e415986762488396620789378a/FolderActionsSetup.png" class="" alt="Folder actions setup utility" height="auto" width="570"><meta itemprop="url" content="https://cnet1.cbsistatic.com/hub/i/r/2012/04/18/d1a8e547-fdc2-11e2-8c7c-d4ae52e62bcc/resize/570xauto/4af0c2e415986762488396620789378a/FolderActionsSetup.png"><meta itemprop="height" content="auto"><meta itemprop="width" content="570"></span>](http://i.i.cbsi.com/cnwk.1d/i/tim/2012/04/18/FolderActionsSetup.png)
+    Folder actions setup utility
+    The Folder Actions Setup utility can be used to configure the scripts that are bound to each folder.
+Screenshot by Topher Kessler/CNET
+
+![<span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img src="https://cnet2.cbsistatic.com/hub/i/r/2012/04/17/d1acf22c-fdc2-11e2-8c7c-d4ae52e62bcc/resize/570xauto/f4c874f738ce91d9771aa73dcb508a04/FolderActionAlert.png" class="" alt="Folder Action Alert" height="auto" width="570"><meta itemprop="url" content="https://cnet2.cbsistatic.com/hub/i/r/2012/04/17/d1acf22c-fdc2-11e2-8c7c-d4ae52e62bcc/resize/570xauto/f4c874f738ce91d9771aa73dcb508a04/FolderActionAlert.png"><meta itemprop="height" content="auto"><meta itemprop="width" content="570"></span>](http://i.i.cbsi.com/cnwk.1d/i/tim/2012/04/17/FolderActionAlert.png)
+    Folder Action Alert
+    This alert will show when an item is placed in any of the monitored folders, and clicking Yes will open the folder and present the item to you.
+Screenshot by Topher Kessler/CNET
+
+Repeat step 3 for the following folders on the system:
+
+* /Library/LaunchAgents
+* /Library/LaunchDaemons
+* /System/Library/LaunchAgents
+* /System/Library/LaunchDaemons
+* username/Library/LaunchAgents
+
+You can check the results of this procedure by using the Folder Actions Setup utility, which is available in the new scripts menu and which will list the folder actions that you have bound to each of these folders. Some people may find this utility more intuitive than using the scripts in the menu to configure each folder.
+
+To use this utility, select a folder in the left column and you will see the scripts that are bound to it listed in the right column. If there are no scripts listed for a folder then you can add them by clicking the plus button under the right-hand column. With this utility, you can add each of the aforementioned folders and then associate the "new item alert" script to them.
+
+When this is done, adding a file to any of these folders will result in an alert, and if you click OK the system will display the file in the Finder. You can then open the file in TextEdit to see its contents (specifically check the "ProgramArguments" string), or otherwise investigate it to determine if it is legitimate or part of a malware package.
+
+For the most part, files should only be added to these folders when you purposefully install a program or if you create your own launch agents for custom purposes, so if you randomly see this script run and display a new launch agent, then be suspicious.
+
+If you find a suspect LaunchAgent file suddenly appear on your system, then immediately move the file to the Trash and then restart the system. This will clear it from the system launchers and prevent it from being automatically loaded. You can then remove the file from the trash to investigate it further, if needed.
+
+![<span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img src="https://cnet4.cbsistatic.com/hub/i/r/2012/04/17/d1b27de5-fdc2-11e2-8c7c-d4ae52e62bcc/resize/570xauto/865b026f7a0d85638a9e95f1e2a140f2/LockLaunchAgents.png" class="" alt="File info window showing lock option" height="auto" width="570"><meta itemprop="url" content="https://cnet4.cbsistatic.com/hub/i/r/2012/04/17/d1b27de5-fdc2-11e2-8c7c-d4ae52e62bcc/resize/570xauto/865b026f7a0d85638a9e95f1e2a140f2/LockLaunchAgents.png"><meta itemprop="height" content="auto"><meta itemprop="width" content="570"></span>](http://i.i.cbsi.com/cnwk.1d/i/tim/2012/04/17/LockLaunchAgents.png)
+    File info window showing lock option
+    Check this box to lock the launch agent folder and prevent any additional files from being added to it.
+Screenshot by Topher Kessler/CNET
+
+##Lock the LaunchAgent folders
+In addition to setting up a Folder Actions script, you can lock the LaunchAgents folder to block all changes to it. OS X supports a file and folder locking flag that if set will override permissions settings and prevent any modification to the file or folder. To do this, get information on the item of interest and then check the "Locked" check box. If you lock the LaunchAgents folder in your user account, then no program or process will be permitted to alter it, and therefore prevent any unwarranted additions to the folders.
+
+Locking the LaunchAgents folder has its benefits, but be aware that in some instances it may cause problems. If you add any new programs that includes LaunchAgent scripts for your user account, then you may see some errors when you try to install or run them; however, this will only happen when installing the programs. Once your programs are all installed and set up, then you should be able to lock the LaunchAgents folder without any problems.
+
+
+These actions to monitor or lock the LaunchAgents folders should help prevent malware attacks by blocking an easy means for malware to be automatically run. While some people may prefer to rely on a malware scanner like ClamXav, Sophos, or VirusBarrier, these tools first require proper definitions to be available in order to identify and remove malicious files.
+
+Unfortunately sometimes these definitions take a while to be updated, as we have seen with the recent SabPub malware that has apparently been around for over a month and avoided the radar because of the attention the Flashback malware was receiving. Therefore, monitoring the LaunchAgents folders is an easy way to help proactively guard against future malware breakouts that use these as a means of attacking the system.
